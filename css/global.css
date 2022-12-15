@@ -1,0 +1,38 @@
+/*
+=Global
+============================================= */
+html {
+	font-size: 62.5%; /* make the default size= 10px */
+	-webkit-text-size-adjust: 100%; /* prevent font scaling in landscape while allowing the user zoom on mobile */
+}
+body {
+	background-color: #f5f5f5;
+	font: 400 1.6rem/1.5 'Noto Sans JP', sans-serif;
+	margin: 0;
+}
+* { 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+/*
+=Link States
+============================================= */
+a {
+	text-decoration: none; /* remove the underline */
+	outline: none;
+}
+/* ========================================== */
+
+
+
+
+
+
+
+
+
+

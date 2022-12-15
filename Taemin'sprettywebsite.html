@@ -1,0 +1,463 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title> Taemin's pretty website </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@300&display=swap" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+
+  <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hello {
+        font-family: 'Saria', sans-serif;
+        padding-top: 310px;
+        background: transparent;
+        position: relative;
+        animation: mymove 1.0s;
+        animation-fill-mode: forwards;
+      }
+      h1, h2, h3 {
+  			text-align: center;
+  			font-size: 70px;
+      }
+      h1 {
+        animation: mymove 1.0s;
+      }
+      h2 {
+        animation: mymove 1.5s;
+      }
+      h3 {
+        animation: mymove 2.5s;
+      }
+      h4 {
+        animation: mymove 3.5s;
+  			text-align: center;
+        font-size: 17px;
+        color: 2E2D2C;
+      }
+
+      @keyframes mymove {
+        0% { opacity: 0;} 100% {opacity: 1;}
+        from {top: 0px;} to {top: 25px;}
+      }
+
+      .f-container{
+        position: fixed;
+        min-width: 200vh;
+        min-height: 85px;
+        top: -5px;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 5;
+      }
+
+      .f-container figure{
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        z-index: 20;
+      }
+
+      .page-wrapper {
+        background-color: white;
+        min-height: 830vh;
+        margin: 0 auto;
+        padding: 10px 10px;
+      }
+
+      .checkbox,
+  		.hamburger {
+  			position: fixed;
+  			top: 2rem;
+  			right: 3rem;
+  			width: 4.5rem;
+  			height: 4.5rem;
+      }
+      .checkbox {
+  			opacity: 0;
+  			cursor: pointer;
+  			z-index: 20;
+  		}
+      .hamburger {
+  			padding: 1rem;
+  			z-index: 15;
+  		}
+      .hamburger .wrapper {
+  			display: flex;
+  			align-items: center;
+  			height: 100%;
+  			transition: 0.5s ease; /* enable a smooth transition */
+  		}
+  		.hamburger .wrapper .lines {
+  			position: relative;
+  		}
+      .hamburger .wrapper .lines,
+  		.hamburger .wrapper .lines::before,
+  		.hamburger .wrapper .lines::after {
+  			background-color: black;
+  			width: 100%;
+  			height: 0.1rem;
+  		}
+  		.hamburger .wrapper .lines::before,
+  		.hamburger .wrapper .lines::after {
+  			content: "";
+  			position: absolute;
+  		}
+  		.hamburger .wrapper .lines::before { top: -0.7rem; }
+  		.hamburger .wrapper .lines::after  { top: 0.7rem; }
+
+      .checkbox:checked + .hamburger .wrapper {
+  			transform: rotate(-135deg);
+  		}
+  		.checkbox:checked + .hamburger .wrapper .lines::before,
+  		.checkbox:checked + .hamburger .wrapper .lines::after {
+  			top: 0;
+  			transform: rotate(-90deg);
+  		}
+  		.checkbox:checked:hover + .hamburger .wrapper {
+  			transform: rotate(-225deg);
+  		}
+
+      .menu {
+  			position: fixed;
+  			top: -6.5rem;
+  			bottom: 0;
+  			right: 10rem;
+  			height: 6.5rem;
+  			display: flex;
+  			flex-direction: row;
+  			align-items: flex-end;
+  			transition: 0.85s ease;
+        z-index: 10;
+  		}
+      .checkbox:checked ~ .menu {
+  			background-color: transparent;
+  			top: 0;
+  		}
+  		.menu a:first-child {
+  			margin-top: 9rem;
+  		}
+  		.menu a {
+  			color: transparent;
+  			width: 9rem;
+  			padding: 1rem 0;
+  			transition: 0.85s ease;
+  		}
+  		.checkbox:checked ~ .menu a {
+  			color: black;
+  		}
+
+      .first {
+        text-align: center;
+        margin-top: 80rem;
+        font-size: 35px;
+        padding-top: 100px;
+      }
+
+      .second {
+        text-align: center;
+        margin-top: 80rem;
+        font-size: 35px;
+        padding-top: 100px;
+      }
+
+      .design {
+  			display: flex;
+  			flex-flow: column wrap;
+        margin-top: 5rem;
+  		}
+      .design figure {
+        position: relative;
+  			margin: 0;
+  			padding: 3rem;
+      }
+      .design figure img {
+        display: block;
+  			width: 100%;
+      }
+
+      .design a {
+  			color: transparent;
+  			text-decoration: none;
+  			position: absolute;
+  			top: 3rem; right: 3rem; bottom: 3rem; left: 3rem;
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+  			text-align: center;
+  			transition: 0.5s ease-in-out;
+  			padding: 0 1rem;
+  		}
+  		.design a:hover {
+  			background-color: rgba(0, 0, 0, 0.5);
+  			color: white;
+  		}
+
+      .non-design{
+  			display: flex;
+  			flex-flow: column wrap;
+        margin-top: 5rem;
+  		}
+      .non-design figure {
+        position: relative;
+  			margin: 0;
+  			padding: 3rem;
+      }
+      .non-design figure img {
+        display: block;
+  			width: 100%;
+      }
+      .non-design a {
+  			color: transparent;
+  			text-decoration: none;
+  			position: absolute;
+  			top: 3rem; right: 3rem; bottom: 3rem; left: 3rem;
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+  			text-align: center;
+  			transition: 0.5s ease-in-out;
+  			padding: 0 1rem;
+  		}
+  		.non-design a:hover {
+  			background-color: rgba(0, 0, 0, 0.5);
+  			color: white;
+  		}
+
+
+      @media (min-width: 576px) {
+        .design {
+          flex-flow: row wrap;
+        }
+        .design figure {
+          flex: 0 1 50%;
+          padding: 3rem;
+        }
+        .non-design {
+          flex-flow: row wrap;
+        }
+        .non-design figure {
+          flex: 0 1 50%;
+          padding: 3rem;
+        }
+      }
+      @media (min-width: 992px) {
+        .design {
+          flex-flow: row wrap;
+        }
+        .design figure {
+          flex: 0 1 33.3333%;
+          padding: 3rem;
+        }
+        .non-design {
+          flex-flow: row wrap;
+        }
+        .non-design figure {
+          flex: 0 1 33.3333%;
+          padding: 3rem;
+        }
+        .thrid{
+          text-align: center;
+          margin-top: 80rem;
+          font-size: 35px;
+          padding-top: 100px;
+        }
+        .thrid{
+          font-family: 'Saria', sans-serif;
+          text-align: center;
+          margin-top: 80rem;
+          font-size: 35px;
+          padding-top: 100px;
+        }
+      }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page-wrapper">
+    <div class="f-container">
+      <figure>
+        <a href="#top"><img src="images/logo2.png" width="45px" height="50px" alt="logo"></a>
+      </figure>
+    </div>
+
+    <header>
+      <input class="checkbox" type="checkbox"></input>
+
+      <div class="hamburger">
+        <div class="wrapper">
+          <div class="lines"></div>
+        </div>
+      </div>
+      <nav class="menu">
+      <a href="#design">Design</a>
+      <a href="#non-design">Non-Design</a>
+      </nav>
+
+        <div class="hello" id="top">
+          <h1> Hello </h1>
+          <h2> my name is </h2>
+          <h3> Taemin </h3>
+          <h4> #designer #painter </h4>
+        </div>
+
+        <div class="first" id="design">
+          <h5> -  Design  -</h5>
+        </div>
+
+        <div class="design">
+          <style> .design figure{align-self: flex-start;} </style>
+          <figure>
+            <img src="images/olympic.png"><a data-fancybox="gallery1-2" href="images/olympic.png" href="#">Paris Olympic</a>
+          </figure>
+          <figure>
+  					<img src="images/davidcarson.png"><a data-fancybox="gallery1-1" href="images/davidcarson.png" href="#">David Carson</a>
+  				</figure>
+          <figure>
+            <img src="images/architecture.png"><a data-fancybox="gallery1-3" href="images/architecture.png" href="#">Arechitecture Lecture Series</a>
+  				</figure>
+          <figure>
+            <img src="images/movie.png"><a data-fancybox="gallery1-4" href="images/movie.png" href="#">Movie poster</a>
+          </figure>
+          <figure>
+            <img src="images/zonemain.png"><a data-fancybox="gallery1-7" href="images/zonemain.png" href="#">Zone</a>
+          </figure>
+          <figure>
+            <img src="images/sojumain.png"><a data-fancybox="gallery1-6" href="images/soju1.png" href="#">SOjU</a>
+          </figure>
+          <figure>
+            <img src="images/JWST.png"><a data-fancybox="gallery1-5" href="images/JWST.png" href="#">James Webb Space Telescope</a>
+          </figure>
+          <figure>
+            <img src="images/nightcap1.png"><a data-fancybox="gallery1-8" href="images/nightcap1.png" href="#">Night Cap</a>
+          </figure>
+          <figure>
+            <img src="images/ttmm1.png"><a data-fancybox="gallery1-9" href="images/ttmm1.png" href="#">Gotterdmmaerung</a>
+          </figure>
+          <figure>
+            <img src="images/empire1.png"><a data-fancybox="gallery1-10" href="images/empire1.png" href="#">Empire</a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery1-6" href="images/soju2.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju3.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju4.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju5.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju6.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju7.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju8.png" href="#"></a>
+            <a data-fancybox="gallery1-6" href="images/soju9.png" href="#"></a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery1-7" href="images/zone_page_02.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_03.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_04.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_05.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_06.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_07.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_08.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_09.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zone_page_10.png" href="#"></a>
+            <a data-fancybox="gallery1-7" href="images/zonemain2.png" href="#"></a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery1-8" href="images/nightcap2.png" href="#"></a>
+            <a data-fancybox="gallery1-8" href="images/nightcap3.png" href="#"></a>
+            <a data-fancybox="gallery1-8" href="images/nightcap4.png" href="#"></a>
+            <a data-fancybox="gallery1-8" href="images/nightcap5.png" href="#"></a>
+            <a data-fancybox="gallery1-8" href="images/nightcap6.png" href="#"></a>
+            <a data-fancybox="gallery1-8" href="images/nightcap7.png" href="#"></a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery1-9" href="images/ttmm2.png" href="#"></a>
+            <a data-fancybox="gallery1-9" href="images/ttmm3.png" href="#"></a>
+            <a data-fancybox="gallery1-9" href="images/ttmm4.png" href="#"></a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery1-10" href="images/empire2.png" href="#"></a>
+            <a data-fancybox="gallery1-10" href="images/empire3.png" href="#"></a>
+            <a data-fancybox="gallery1-10" href="images/empire4.png" href="#"></a>
+            <a data-fancybox="gallery1-10" href="images/empire5.png" href="#"></a>
+            <a data-fancybox="gallery1-10" href="images/empire6.png" href="#"></a>
+          </figure>
+        </div>
+
+        <div class="second" id="non-design">
+          <h6> -  Non Design  -</h6>
+        </div>
+
+        <div class="non-design">
+            <style> .non-design figure{align-self: flex-start;} </style>
+          <figure>
+            <img src="images/imshybutimnotshy.jpg"><a data-fancybox="gallery2-1" href="images/imshybutimnotshy.jpg" href="#">I'm shy but I'm not shy</a>
+  				</figure>
+          <figure>
+            <img src="images/shadow.jpg"><a data-fancybox="gallery2-2" href="images/shadow.jpg" href="#">Shadow</a>
+          </figure>
+          <figure>
+            <img src="images/stay1.png"><a data-fancybox="gallery2-5" href="images/stay1.png" href="#">Stay</a>
+          </figure>
+          <figure>
+            <img src="images/sepaarrraate.jpg"><a data-fancybox="gallery2-3" href="images/sepaarrraate.jpg" href="#">Sepaarrraate</a>
+  				</figure>
+          <figure>
+            <img src="images/untitled1.jpeg"><a data-fancybox="gallery2-8" href="images/untitled1.jpeg" href="#">Untitled</a>
+          </figure>
+          <figure>
+            <img src="images/homesick2.jpg"><a data-fancybox="gallery2-4" href="images/homesick2.jpg" href="#">Homesick</a>
+  				</figure>
+          <figure>
+            <img src="images/addicted1.png"><a data-fancybox="gallery2-6" href="video/addicted.mp4" href="#">Addicted</a>
+  				</figure>
+          <figure>
+            <img src="images/cayce.png"><a data-fancybox="gallery2-7" href="video/cayce.mp4" href="#">Let's Drink</a>
+  				</figure>
+          <figure>
+            <a data-fancybox="gallery2-4" href="images/homesick3.jpg" href="#"></a>
+            <a data-fancybox="gallery2-4" href="images/homesick4.jpg" href="#"></a>
+            <a data-fancybox="gallery2-4" href="images/homesick1.jpg" href="#"></a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery2-5" href="images/stay2.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay3.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay4.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay5.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay6.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay7.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay8.png" href="#"></a>
+            <a data-fancybox="gallery2-5" href="images/stay9.png" href="#"></a>
+          </figure>
+          <figure>
+            <a data-fancybox="gallery2-8" href="images/untitled2.jpeg" href="#"></a>
+            <a data-fancybox="gallery2-8" href="images/untitled3.jpeg" href="#"></a>
+            <a data-fancybox="gallery2-8" href="images/untitled4.jpeg" href="#"></a>
+            <a data-fancybox="gallery2-8" href="images/untitled5.jpeg" href="#"></a>
+          </figure>
+          </div>
+        </div>
+
+          <script>
+          if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+          } else {
+            window.onbeforeunload =function () {
+              window.scrollTo(0, 0);
+            }
+          }
+          </script>
+          <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    </header>
+  </body>
+</html>
