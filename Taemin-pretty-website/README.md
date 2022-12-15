@@ -1,2 +1,0 @@
-# Taemin-pretty-website
- Hi
